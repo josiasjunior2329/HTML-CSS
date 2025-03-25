@@ -1,0 +1,186 @@
+*{
+    margin: 0; /* Remove toda a margem padrão de todos os elementos. */
+    padding: 0; /* Remove todo o espaçamento interno padrão de todos os elementos. */
+    box-sizing: border-box; /* Inclui as bordas e o padding no cálculo do tamanho total do elemento. */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão como 'Poppins', com substituto 'sans-serif' se não estiver disponível. */
+}
+
+body {
+    min-height: 100vh; /* Garante que o body ocupe no mínimo 100% da altura da viewport */
+    display: flex; /* Aplica o layout flexível ao corpo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    background:  
+        url('Fundo.jpg'); /* Define o gradiente e a imagem */
+    background-size: cover; /* Faz com que a imagem ocupe toda a tela */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+}
+
+
+body {
+    min-height: 100vh; /* Define uma altura mínima de 100% da altura da viewport. */
+    display: flex; /* Aplica o layout flexível ao corpo. */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro do corpo. */
+    align-items: center; /* Centraliza verticalmente o conteúdo dentro do corpo. */
+    background: linear-gradient(80deg, #dd0909, #050381)
+    image()
+}
+
+
+.form-container {
+    position: relative; /* Define a posição do elemento como relativa ao seu posicionamento normal. */
+    width: 400px; /* Define a largura fixa do contêiner como 400px. */
+    padding: 50px 40px; /* Define 50px de espaçamento interno superior/inferior e 40px lateral. */
+    background: #f3efef; /* Define uma cor de fundo preta para o contêiner. */
+    border-radius: 20px; /* Adiciona bordas arredondadas com raio de 20px. */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner. */
+}
+
+.form-container::before {
+    content: ''; /* Cria um pseudo-elemento vazio antes do conteúdo principal do contêiner. */
+    position: absolute; /* Posiciona o pseudo-elemento em relação ao contêiner pai. */
+    top: -50%; /* Move o pseudo-elemento 50% acima do topo do contêiner. */
+    left: -50%; /* Move o pseudo-elemento 50% para a esquerda do contêiner. */
+    width: 400px; /* Define a largura do pseudo-elemento como 400px. */
+    height: 520px; /* Define a altura do pseudo-elemento como 520px. */
+    background: linear-gradient(0deg, transparent, #ed1835, #b82337); /* Aplica um gradiente linear começando transparente e mudando para azul-claro (#45f3ff). */
+    transform-origin: bottom right; /* Define o ponto de origem da transformação no canto inferior direito. */
+    animation: animate 6s linear infinite; /* Aplica uma animação contínua de 6 segundos ao pseudo-elemento. */
+}
+
+.form-container::after {
+    content: ''; /* Cria um pseudo-elemento vazio depois do conteúdo principal do contêiner. */
+    position: absolute; /* Posiciona o pseudo-elemento em relação ao contêiner pai, ignorando o fluxo normal. */
+    top: -50%; /* Move o pseudo-elemento 50% acima do topo do contêiner pai. */
+    left: -50%; /* Move o pseudo-elemento 50% para a esquerda do contêiner pai. */
+    width: 400px; /* Define a largura fixa do pseudo-elemento como 400px. */
+    height: 520px; /* Define a altura fixa do pseudo-elemento como 520px. */
+    background: linear-gradient(0deg, transparent, #13339c), #13339c; /* Aplica um gradiente linear que vai de transparente a rosa (#ff2770), com um fundo rosa sólido. */
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite; /* Aplica uma animação chamada "animate" que dura 6 segundos, repetindo indefinidamente. */
+    animation-delay: -3s; /* Introduz um atraso de 3 segundos antes de iniciar a animação, criando um efeito de desfasamento. */
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg); /* Define a posição inicial da animação com uma rotação de 0 graus. */
+    }
+
+    100% {
+        transform: rotate(360deg); /* Define a posição final da animação com uma rotação completa de 360 graus. */
+    }
+}
+
+.form {
+    position: relative; /* Define que o elemento pode ser posicionado em relação à sua posição original ou aos elementos filhos. */
+    z-index: 10; /* Define a ordem na pilha de elementos, colocando este elemento acima de outros com z-index menor. */
+    background: #050381; /* Define a cor de fundo como preta (#0a0a0a). */
+    padding: 40px; /* Adiciona 40px de espaçamento interno em todos os lados do elemento. */
+    border-radius: 15px; /* Arredonda os cantos do elemento com um raio de 15px. */
+    display: flex; /* Aplica um layout flexível ao elemento, permitindo que os filhos sejam alinhados de forma flexível. */
+    flex-direction: column; /* Alinha os elementos filhos em uma direção vertical (de cima para baixo). */
+    gap: 25px; /* Adiciona um espaçamento de 25px entre os elementos filhos. */
+    align-items: center;
+    text-align: center;
+}
+
+img {
+    width: 50px;
+    margin-bottom: 10px; /* Espaço entre a imagem e o título */
+}
+
+
+h2 {
+    color: #FFF; /* Define a cor do texto como branco (#FFF). */
+    font-weight: 600; /* Define o peso da fonte como semi-negrito. */
+    text-align: center; /* Centraliza o texto horizontalmente. */
+    letter-spacing: 2px; /* Define um espaçamento de 2px entre as letras. */
+    margin-bottom: 10px; /* Adiciona uma margem inferior de 10px. */
+    font-family: 'Lucida Sans'; /* Define a fonte como 'Lucida Sans'. */
+}
+
+.input-box {
+    position: relative; /* Posiciona o elemento em relação ao fluxo normal e seus elementos filhos. */
+}
+
+.input-box input {
+    width: 100%; /* Define que o elemento ocupará 100% da largura do contêiner pai. */
+    padding: 15px 20px; /* Adiciona 15px de espaçamento interno superior/inferior e 20px lateral. */
+    border: none; /* Remove a borda padrão do campo de entrada. */
+    background-color: #fdfbfb; /* Define uma cor de fundo cinza-escuro (#1a1a1a). */
+    border-radius: 5px; /* Arredonda os cantos do campo de entrada com raio de 5px. */
+    color: #050381; /* Define a cor do texto como branca. */
+    font-size: 1em; /* Define o tamanho da fonte relativo ao tamanho da fonte padrão. */
+    transition: 0.5s; /* Adiciona uma transição suave de 0,5 segundos ao mudar as propriedades animáveis. */
+}
+
+.input-box label {
+    position: absolute; /* Posiciona o rótulo em relação ao contêiner pai. */
+    left: 20px; /* Posiciona o rótulo 20px à direita da borda esquerda do contêiner. */
+    top: 50%; /* Posiciona o rótulo no meio vertical do contêiner pai. */
+    transform: translateY(-50%); /* Ajusta o rótulo para que fique exatamente centralizado verticalmente. */
+    color: #0a087a;/* Define a cor do rótulo com opacidade de 50% (branco transparente). */
+    pointer-events: none; /* Impede que o rótulo seja interativo (como cliques ou foco). */
+    transition: 0.3s; /* Aplica uma transição suave de 0,3 segundos ao mudar as propriedades animáveis. */
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -10px; /* Move o rótulo 10px para cima do campo de entrada. */
+    left: 15px; /* Ajusta a posição horizontal do rótulo para 15px à direita do contêiner pai. */
+    font-size: 0.8em; /* Reduz o tamanho da fonte do rótulo para 80% do tamanho padrão. */
+    color: #ffffff; /* Define a cor do texto do rótulo como rosa (#ff2770). */
+}
+
+.input-box input:focus,
+.input-box input:valid {
+    outline: none; /* Remove o contorno padrão ao focar no campo de entrada. */
+    border: 1px solid #ff2770; /* Adiciona uma borda sólida rosa (#ff2770) ao campo de entrada. */
+    box-shadow: 0 0 20px #ff277055; /* Aplica um brilho rosa (#ff2770) com opacidade de 33% ao redor do campo. */
+}
+
+.form button {
+    background: linear-gradient(50deg, #dd0909, #050381); /* Aplica um gradiente diagonal que vai de rosa (#ff2770) para azul-claro (#45f3ff). */
+    border: none; /* Remove a borda padrão do botão. */
+    padding: 10px; /* Adiciona 15px de espaçamento interno ao botão. */
+    color: #FFF; /* Define a cor do texto como branca (#FFF). */
+    font-size: 1.1em; /* Define o tamanho da fonte 10% maior que o padrão. */
+    border-radius: 5px; /* Arredonda os cantos do botão com um raio de 5px. */
+    cursor: pointer; /* Altera o cursor para um ponteiro quando o botão é clicável. */
+    transition: 0.3s; /* Adiciona uma transição suave de 0,3 segundos às propriedades animáveis. */
+    margin-top: 20px; /* Adiciona uma margem superior de 20px acima do botão. */
+    position: relative; /* Define a posição relativa do botão para que elementos filhos possam ser posicionados nele. */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do botão. */
+    width: 225px;
+}
+
+.form button::before {
+    content: ''; /* Cria um pseudo-elemento vazio antes do conteúdo do botão. */
+    position: absolute; /* Posiciona o pseudo-elemento de forma absoluta dentro do botão. */
+    top: 0; /* Posiciona o topo do pseudo-elemento alinhado ao topo do botão. */
+    left: -100%; /* Posiciona o pseudo-elemento fora da área visível, à esquerda do botão. */
+    width: 100%; /* Define a largura do pseudo-elemento como igual à largura do botão. */
+    height: 100%; /* Define a altura do pseudo-elemento como igual à altura do botão. */
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); /* Aplica um gradiente horizontal com uma faixa translúcida branca. */
+    transition: 0.5s; /* Adiciona uma transição suave de 0,5 segundos ao pseudo-elemento. */
+}
+
+.form button:hover::before {
+    left: 100%; /* Move o pseudo-elemento para fora da área visível, à direita do botão, ao passar o mouse sobre ele. */
+}
+
+.form button:hover {
+    box-shadow: 0 0 30px #ff277055; /* Aplica um brilho rosa (#ff2770) com opacidade de 33% ao botão ao passar o mouse. */
+    transform: translateY(-2px); /* Move o botão ligeiramente para cima (2px) ao passar o mouse, criando um efeito de "pressionamento". */
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        width: 90%; /* Define a largura do contêiner como 90% da largura da viewport em dispositivos com largura máxima de 480px. */
+        padding: 30px; /* Reduz o espaçamento interno para 30px, adaptando-se a telas menores. */
+    }
+    .form {
+        padding: 30px; /* Reduz o espaçamento interno do formulário para 30px, alinhando com o contêiner em dispositivos menores. */
+    }
+}
