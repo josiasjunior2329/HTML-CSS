@@ -1,0 +1,360 @@
+:root {
+    --terracotta: #541D08;
+    --sage: #11472C;
+    --mustard: #FFBF00;
+    --cream: #F4F1DE;
+    --charcoal: #3D405B;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--cream);
+    color: var(--charcoal);
+    /*overflow: hidden; é usada para controlar o comportamento do conteúdo que ultrapassa os limites do elemento. Quando você define overflow: hidden, qualquer conteúdo que exceda a área visível do elemento será cortado e não será exibido.*/
+}
+
+/* Cabeçalho Moderno (Hearder) */
+header {
+    position: fixed; /* Define o cabeçalho como fixo, para que ele permaneça visível no topo ao rolar a página. */
+    top: 0; /* Posiciona o cabeçalho no topo da página. */
+    width: 100%; /* Define a largura do cabeçalho para ocupar 100% da área visível da tela. */
+    padding: 1.5rem 5%; /* Adiciona espaçamento interno ao redor do conteúdo: 1.5rem nas partes superior e inferior, e 5% nas laterais. */
+    background: rgba(255, 255, 255, 0.5); /* Branco com 70% de opacidade */
+    backdrop-filter: blur(20px); /* Aplica um efeito de desfoque ao fundo do cabeçalho para criar um estilo visual mais sofisticado. */
+    display: flex; /* Define o layout como flexível, permitindo o alinhamento e distribuição dos itens dentro do cabeçalho. */
+    justify-content: space-between; /* Alinha os itens dentro do cabeçalho com espaço uniforme entre eles. */
+    align-items: center; /* Centraliza os itens verticalmente dentro do cabeçalho. */
+    z-index: 1000; /* Garante que o cabeçalho tenha prioridade na exibição */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--terracotta);
+}
+
+.nav-links {
+    display: flex; /* Define o layout dos links como um contêiner flexível, permitindo alinhar e distribuir os itens de forma fácil. */
+    gap: 2rem; /* Adiciona um espaçamento uniforme de 2rem entre os itens dentro do contêiner. */
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove o sublinhado padrão dos links. */
+    color: var(--charcoal); /* Define a cor do texto do link usando uma variável CSS chamada --charcoal. */
+    font-weight: 500; /* Torna o texto do link ligeiramente mais espesso que o padrão. */
+    transition: color 0.3s; /* Adiciona uma transição suave de 0.3 segundos ao alterar a cor do link. */
+}
+
+.nav-links a:hover {
+    color: var(--terracotta); /* Altera a cor do link ao passar o mouse sobre ele, utilizando a variável --terracotta. */
+}
+
+.cta-btn {
+    background: var(--terracotta); /* Define a cor de fundo do botão com a variável --terracotta. */
+    color: white; /* Define a cor do texto do botão como branco. */
+    padding: 0.8rem 2rem; /* Adiciona preenchimento interno: 0.8rem no topo e na parte inferior, e 2rem nas laterais. */
+    border-radius: 30px; /* Torna os cantos do botão arredondados com um raio de 30px. */
+    border: none; /* Remove qualquer borda do botão. */
+    transition: transform 0.3s; /* Adiciona uma transição suave de 0.3 segundos ao aplicar transformações no botão. */
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px); /* Move o botão ligeiramente para cima (-2px) ao passar o mouse sobre ele, criando um efeito de "elevação". */
+}
+
+/* Hero Seção */
+
+.hero {
+    min-height: 100vh; /* Define a altura mínima da seção como 100% da altura da viewport, preenchendo toda a tela verticalmente. */
+    padding: 8rem 5% 4rem; /* Adiciona espaçamento interno: 8rem na parte superior, 5% nas laterais e 4rem na parte inferior. */
+    display: grid; /* Configura o layout da seção como um grid para organização dos elementos. */
+    grid-template-columns: 1fr 1fr; /* Divide o grid em duas colunas iguais. */
+    align-items: center; /* Centraliza os itens do grid verticalmente. */
+    gap: 4rem; /* Define um espaçamento de 4rem entre os itens no grid. */
+}
+
+.hero-content {
+    max-width: 600px; /* Define a largura máxima do conteúdo da seção como 600px, para limitar o texto e melhorar a legibilidade. */
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5w, 4rem); /* Define o tamanho da fonte do título usando uma escala responsiva que varia de 2.5rem a 4rem, com base na largura da viewport. */
+    line-height: 1.2; /* Define o espaçamento entre as linhas do título para uma proporção agradável. */
+    margin-bottom: 1.5rem; /* Adiciona uma margem inferior de 1.5rem para separar o título do próximo elemento. */
+    color: var(--charcoal); /* Define a cor do título usando a variável CSS --charcoal. */
+}
+
+.hero p {
+    font-size: 1.2rem; /* Define o tamanho da fonte do parágrafo como 1.2rem para facilitar a leitura. */
+    margin-bottom: 2rem; /* Adiciona uma margem inferior de 2rem para separar o parágrafo de outros elementos. */
+    color: #666; /* Define a cor do texto como um cinza suave. */
+}
+        
+.hero-image {
+    position: relative; /* Define o contêiner da imagem como relativo, permitindo posicionar elementos filhos de forma específica dentro dele. */
+}
+
+.hero-image img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do contêiner pai. */
+    object-fit: cover; /* Ajusta a imagem para preencher o contêiner sem distorção, cortando partes se necessário. */
+    transition: transform 0.3s; /* Adiciona uma transição suave de 0.3 segundos ao aplicar transformações na imagem. */
+}
+
+.hero-image:hover img {
+    transform: scale(1.05); /* Amplia a imagem em 5% ao passar o mouse, criando um efeito de "zoom". */
+}
+
+/* Seção Menu */
+
+.menu {
+    padding: 6rem 5%; /* Adiciona espaçamento interno: 6rem na parte superior e inferior, e 5% nas laterais. */
+    background: white; /* Define o fundo do menu como branco. */
+}
+
+.menu h2 {
+    text-align: center; /* Centraliza o texto do cabeçalho dentro do menu. */
+    font-size: 2.5rem; /* Define o tamanho da fonte do cabeçalho como 2.5rem. */
+    margin-bottom: 2rem; /* Adiciona uma margem inferior de 2rem para separar do próximo elemento. */
+}
+
+.menu-filters {
+    display: flex; /* Exibe os filtros em um layout flexível. */
+    justify-content: center; /* Centraliza os itens dentro do contêiner de filtros. */
+    gap: 1.5rem; /* Adiciona um espaçamento de 1.5rem entre os filtros. */
+    margin-bottom: 3rem; /* Adiciona uma margem inferior de 3rem para separar do próximo elemento. */
+}
+
+.filter-btn {
+    background: transparent; /* Define o fundo do botão como transparente. */
+    border: 2px solid var(--terracotta); /* Adiciona uma borda de 2px usando a cor definida pela variável --terracotta. */
+    color: var(--terracotta); /* Define a cor do texto como a variável --terracotta. */
+    padding: 0.8rem 2rem; /* Adiciona preenchimento interno: 0.8rem no topo e embaixo, e 2rem nas laterais. */
+    border-radius: 30px; /* Torna os cantos do botão arredondados com um raio de 30px. */
+    cursor: pointer; /* Muda o cursor para "mão" ao passar sobre o botão, indicando que é clicável. */
+    transition: all 0.3s; /* Adiciona uma transição suave de 0.3s para todas as alterações no botão. */
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--terracotta); /* Muda o fundo para a cor definida na variável --terracotta ao ativar ou passar o mouse. */
+    color: white; /* Altera a cor do texto para branco nesses estados. */
+}
+
+.menu-grid {
+    display: grid; /* Define o layout como grid para organização dos itens do menu. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cria colunas com um tamanho mínimo de 300px e ajusta automaticamente ao espaço disponível. */
+    gap: 2rem; /* Adiciona um espaçamento de 2rem entre os itens no grid. */
+}
+
+.menu-card {
+    background: white; /* Define o fundo do cartão do menu como branco. */
+    border-radius: 15px; /* Torna os cantos do cartão arredondados com um raio de 15px. */
+    overflow: hidden; /* Oculta qualquer conteúdo que exceda os limites do cartão. */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao redor do cartão. */
+    transition: transform 0.3s, box-shadow 0.3s; /* Adiciona transições suaves para transformações e sombra. */
+}
+
+.menu-card:hover {
+    transform: translateY(-2px); /* Move o cartão ligeiramente para cima ao passar o mouse. */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Aumenta a intensidade da sombra ao passar o mouse. */
+}
+
+.menu-card img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do cartão. */
+    object-fit: cover; /* Ajusta a imagem para cobrir totalmente o contêiner sem distorção. */
+}
+
+.menu-card-content {
+    padding: 1.5rem; /* Adiciona espaçamento interno ao conteúdo do cartão. */
+}
+
+.menu-card h3 {
+    font-size: 1.3rem; /* Define o tamanho da fonte do título do cartão. */
+    margin-bottom: 0.5rem; /* Adiciona uma margem inferior de 0.5rem para separar do próximo elemento. */
+}
+
+.menu-card p {
+    font-size: 1rem; /* Define o tamanho da fonte do parágrafo. */
+    color: #666; /* Define a cor do texto como um cinza suave. */
+    margin-bottom: 1rem; /* Adiciona uma margem inferior de 1rem para separar do próximo elemento. */
+}
+
+.menu-card .price {
+    font-size: 1.2rem; /* Define o tamanho da fonte do preço. */
+    font-weight: 700; /* Torna o texto do preço mais espesso. */
+    color: var(--terracotta); /* Define a cor do preço usando a variável --terracotta. */
+}
+
+
+/* Importante Seção */
+
+.features {
+    padding: 6rem 5%; /* Adiciona espaçamento interno: 6rem na parte superior e inferior, e 5% nas laterais. */
+    background: var(--sage); /* Define o fundo da seção com a cor especificada na variável --sage. */
+    color: white; /* Define a cor do texto como branco para contraste com o fundo. */
+}
+
+.features-grid {
+    display: grid; /* Configura o layout como grid para organizar os elementos da seção. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cria colunas ajustáveis com tamanho mínimo de 250px, adaptando-se ao espaço disponível. */
+    gap: 3rem; /* Define um espaçamento de 3rem entre os itens no grid. */
+    text-align: center; /* Centraliza o texto dentro de cada elemento. */
+}
+
+.feature-card {
+    padding: 2rem; /* Adiciona espaçamento interno ao cartão: 2rem em todas as direções. */
+    background: rgba(255, 255, 255, 0.1); /* Define um fundo semitransparente, com opacidade de 10%. */
+    border-radius: 15px; /* Torna os cantos do cartão arredondados com um raio de 15px. */
+    backdrop-filter: blur(10px); /* Aplica um efeito de desfoque no fundo do cartão. */
+}
+
+.feature-card i {
+    font-size: 2.5rem; /* Define o tamanho do ícone como 2.5rem. */
+    margin-bottom: 1rem; /* Adiciona uma margem inferior de 1rem para separar o ícone do próximo elemento. */
+    color: var(--mustard); /* Define a cor do ícone usando a variável --mustard. */
+}
+
+/* Seção de Testemunhos de clientes */
+
+.testimonials {
+    padding: 6rem 5%; /* Adiciona espaçamento interno: 6rem na parte superior e inferior, e 5% nas laterais. */
+    background: white; /* Define o fundo da seção como branco. */
+}
+
+.testimonials h2 {
+    text-align: center; /* Centraliza o texto do título da seção. */
+    font-size: 2.5rem; /* Define o tamanho da fonte do título como 2.5rem. */
+    margin-bottom: 3rem; /* Adiciona uma margem inferior de 3rem para separar o título do próximo elemento. */
+}
+
+.testimonial-grid {
+    display: grid; /* Configura o layout como grid para organizar os itens dentro da seção. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cria colunas ajustáveis com tamanho mínimo de 300px, adaptando-se ao espaço disponível. */
+    gap: 2rem; /* Define um espaçamento de 2rem entre os itens no grid. */
+}
+
+.testimonial-card {
+    background: var(--cream); /* Define o fundo do cartão com a cor especificada na variável --cream. */
+    padding: 2rem; /* Adiciona espaçamento interno ao conteúdo do cartão: 2rem em todas as direções. */
+    border-radius: 15px; /* Torna os cantos do cartão arredondados com um raio de 15px. */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao redor do cartão para um efeito de elevação. */
+    text-align: center; /* Centraliza o conteúdo dentro do cartão. */
+}
+
+.testimonial-card img {
+    width: 80px; /* Define a largura da imagem como 80px. */
+    height: 80px; /* Define a altura da imagem como 80px para mantê-la quadrada. */
+    border-radius: 50%; /* Torna a imagem circular. */
+    margin-bottom: 1rem; /* Adiciona uma margem inferior de 1rem para separar a imagem do próximo elemento. */
+}
+
+.testimonial-card h3 {
+    font-size: 1.2rem; /* Define o tamanho da fonte do título do cartão como 1.2rem. */
+    margin-bottom: 0.5rem; /* Adiciona uma margem inferior de 0.5rem para separar do próximo elemento. */
+}
+
+.testimonial-card p {
+    font-size: 1rem; /* Define o tamanho da fonte do parágrafo como 1rem. */
+    color: #666; /* Define a cor do texto como um cinza suave. */
+}
+
+
+/* Footer */
+
+footer {
+    background: var(--charcoal);
+    color: white;
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.footer-col {
+    color: var(--mustard);
+    margin-bottom: 1.5rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 0.8rem;
+
+}
+
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--terracotta);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: colo    0.3s;
+}
+
+.social-links a:hover{
+    color: var(--terracotta);
+}
+
+.copyright {
+    margin-top: 2rem;
+    opacity: 0.8s;
+}
+
+/* Resposividade */
+
+@media (max-width: 768px) {
+    .hero{
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 6rem;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-filters {
+        flex-wrap: wrap;
+    }
+}
+
+
